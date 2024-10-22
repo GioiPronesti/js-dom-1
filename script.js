@@ -28,7 +28,7 @@ Inizio
     Fine
 
 */
-
+/*
 const lamp = document.getElementById('lamp');
 const switchLamp = document.getElementById('switch-lamp');
 
@@ -42,3 +42,28 @@ switchLamp.addEventListener('click', function () {
     switchLamp.textContent = 'switch on';
   }
 });
+
+*/
+
+
+const lamp = document.getElementById('lamp');
+const switchLamp = document.getElementById('switch-lamp');
+
+switchLamp.addEventListener('click', function () {
+    
+  if (!lamp.classList.contains("active")) {  
+    // se l'elemento lampadina non contiene un classe "active" 
+    lamp.src = './img/yellow_lamp.png';    // 1 caso lampadina accesa 
+    switchLamp.textContent = 'switch off'; // scrivi sul bottone, spegni
+    lamp.classList.add("active") 
+    // aggiungi la classe active 
+
+  } else {
+    lamp.src = './img/white_lamp.png';    // 2 caso lampadina spenta
+    switchLamp.textContent = 'switch on'; // scrivi sul bottone, accendi
+    lamp.classList.remove("active")     
+    // rimuovi la classe active 
+       
+  }
+});
+        
